@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+body {
+  background-color: #707070;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: column;
+  background-color: #707070;
+  padding-right: 4px;
+  width: 55vw;
+  height: 80vh;
+  z-index: 10;
+  margin: auto;
+  border: 1px solid seashell;
+  margin-top: 6%;
+  border-radius: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.audio-tracks {
+  display: flex;
+  flex-flow: row-reverse;
+  width: 100%;
+  height: 90%;
+  border-radius: 25px;
+  background-color: seashell;
+  border: 2px solid seashell;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.playlist {
+  width: 50%;
+  height: 80%;
+  overflow-y: auto;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+}
+.title {
+  width: 75%;
+  padding-left: 20px;
+  text-align: left;
+  padding-bottom: 10px;
+  font-weight: 600;
+  margin: auto;
+  font-size: 0.9rem;
+}
+
+.now-playing {
+  width: 35%;
+  height: 80%;
+  margin: auto;
 }

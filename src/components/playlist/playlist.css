@@ -1,0 +1,24 @@
+.song-btn {
+  width: 80%;
+  height: 25%;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 3%;
+  z-index: 10;
+  border: none;
+  outline: none;
+}
+
+.song-name {
+  font-size: large;
+  color: aliceblue;
+  text-align: left;
+  padding-left: 20px;
+  font-weight: 900;
+}
+
+.artist {
+  font-size: small;
+  color: aliceblue;
+  font-weight: 300;
+}
