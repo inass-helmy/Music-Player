@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Music-Player/static/css/main.0fed1613.chunk.css",
+    "main.js": "/Music-Player/static/js/main.3782aaf9.chunk.js",
+    "main.js.map": "/Music-Player/static/js/main.3782aaf9.chunk.js.map",
+    "runtime-main.js": "/Music-Player/static/js/runtime-main.a4626258.js",
+    "runtime-main.js.map": "/Music-Player/static/js/runtime-main.a4626258.js.map",
+    "static/css/2.3bd2016b.chunk.css": "/Music-Player/static/css/2.3bd2016b.chunk.css",
+    "static/js/2.27513468.chunk.js": "/Music-Player/static/js/2.27513468.chunk.js",
+    "static/js/2.27513468.chunk.js.map": "/Music-Player/static/js/2.27513468.chunk.js.map",
+    "index.html": "/Music-Player/index.html",
+    "precache-manifest.1adf6ff6d84e2dba27fe77d95ce30da8.js": "/Music-Player/precache-manifest.1adf6ff6d84e2dba27fe77d95ce30da8.js",
+    "service-worker.js": "/Music-Player/service-worker.js",
+    "static/css/2.3bd2016b.chunk.css.map": "/Music-Player/static/css/2.3bd2016b.chunk.css.map",
+    "static/css/main.0fed1613.chunk.css.map": "/Music-Player/static/css/main.0fed1613.chunk.css.map",
+    "static/js/2.27513468.chunk.js.LICENSE": "/Music-Player/static/js/2.27513468.chunk.js.LICENSE",
+    "static/media/player.css": "/Music-Player/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4626258.js",
+    "static/css/2.3bd2016b.chunk.css",
+    "static/js/2.27513468.chunk.js",
+    "static/css/main.0fed1613.chunk.css",
+    "static/js/main.3782aaf9.chunk.js"
+  ]
+}
