@@ -1,10 +1,9 @@
 {
-  "homepage": "https://inass-helmy.github.io/Music-Player/",
+  "homepage": "http://inass-helmy.github.io/Music-Player",
   "name": "music-player",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "deploy": "gh-pages -d build",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
@@ -36,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
