@@ -4,4 +4,5 @@ export const play = 'fa fa-play fa-lg',
   previous = 'fa fa-step-backward fa-lg',
   shuffle = 'fa fa-random fa-lg',
   volume = 'fa fa-volume-up fa-lg',
-  mute = 'fa fa-volume-off fa-lg';
+  mute = 'fa fa-volume-off fa-lg',
+  repeat = 'fa fa-repeat fa-lg';
