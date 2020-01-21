@@ -1,14 +1,16 @@
 import React from 'react';
 import './playlist.css';
 
-const Playlist = ({ title, src, id, playSong, color, artist }) => {
+const Playlist = ({ title, src, id, playSong, color, artist, isClicked }) => {
   const clickHandler = (src, id) => {
     playSong(src, id);
   };
 
+  const justify = `song-btn ${isClicked ? 'shift-right' : 'auto'}`;
+
   return (
     <button
-      className="song-btn"
+      className={justify}
       style={{ backgroundColor: color }}
       onClick={() => clickHandler(src, id)}
     >
