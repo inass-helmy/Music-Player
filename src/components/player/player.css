@@ -1,42 +1,145 @@
 @import url('../../../node_modules/font-awesome/css/font-awesome.css');
 
+/* ///////////////////////////// player-controls //////////////////////////////////// */
+
 .player-controls {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  justify-content: center;
+  padding-right: 10vw;
+  padding-left: 10vw;
+  box-sizing: border-box;
+  background-color: #282828;
+  border-top: 1px solid #000;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+  z-index: 10;
 }
 
-.player-btn {
-  margin-right: 10px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: #707070;
+.controls:hover,
+.controls:focus {
   color: white;
 }
 
-progress {
+.play:hover,
+.play:focus,
+.play:active {
+  color: #fff;
+  transition-duration: 66ms;
+  transition-delay: 0ms;
+  transition-property: all;
+  transform: scale(1.06);
+  transition-timing-function: cubic-bezier(0.3, 0, 0, 1);
+}
+
+.player-btn {
+  z-index: 15;
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
   border: none;
-  width: 80%;
-  height: 4px;
-  background: crimson;
+  outline: none;
+  background-color: #282828;
+  color: #b3b3b3;
+  font-size: 1.1em;
+}
+
+.fill-color {
+  color: #f59b23;
+}
+
+/* ///////////////////////////// volume-range/btn //////////////////////////////////// */
+
+input[type='range'] {
+  -webkit-appearance: none;
+  overflow: hidden;
+  background-color: grey;
+  height: 5px;
+  width: 150px;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.6);
+  opacity: 0.7;
+  cursor: pointer;
+}
+input[name='volume']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
+  background: #fff;
+  box-shadow: -150px 0 0 150px white;
+}
+.volume-btn:hover + .volume-range,
+.volume-range:hover,
+.volume-range:active {
+  opacity: 1;
+}
+
+/* ///////////////////////////// progress-bar //////////////////////////////////// */
+
+input[name='progressBar'] {
+  width: 80vw;
   margin-left: 10px;
+  margin-right: 10px;
+}
+input[name='progressBar']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
+  background: #f59b23;
+  box-shadow: -80vw 0 0 80vw #f59b23;
+  transition: width 0.15s;
+  transition: box-shadow 0.15s;
 }
 
-progress::-moz-progress-bar {
-  background: lightcolor;
+input[name='progressBar']:hover {
+  opacity: 1;
+  height: 10px;
 }
 
-progress::-webkit-progress-value {
-  background: brown;
+.slider {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
 }
 
-progress::-webkit-progress-bar {
-  background: white;
+/* ///////////////////////////// media-queries //////////////////////////////////// */
+
+@media only screen and (max-width: 959px) {
+  .player-controls {
+    flex-flow: row wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-btn {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 0.8rem;
+  }
+
+  input[name='volume'] {
+    width: 12vw;
+    height: 4px;
+    padding-left: 0;
+  }
+  .volume-btn {
+    padding-right: 2px;
+  }
+
+  .slider {
+    order: -1;
+    flex: 1 0 100%;
+  }
+  input[name='progressBar']:hover {
+    height: 8px;
+  }
 }
