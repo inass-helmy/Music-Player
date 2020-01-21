@@ -1,50 +1,197 @@
+@font-face {
+  font-family: localRobotoFont;
+  src: url('../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: localRobotoFontBlack;
+  src: url('../assets/fonts/Roboto-Black.ttf');
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #707070;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  text-transform: none;
+  font-family: localRobotoFont, Arial, sans-serif;
 }
 .container {
   display: flex;
   flex-flow: column;
-  background-color: #707070;
-  padding-right: 4px;
-  width: 55vw;
-  height: 80vh;
-  z-index: 10;
-  margin: auto;
-  border: 1px solid seashell;
-  margin-top: 6%;
-  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), #121212 40%);
+  background-color: #f59b23;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.audio-tracks {
+/* ///////////////////////////// header //////////////////////////////////// */
+
+header {
   display: flex;
-  flex-flow: row-reverse;
+  flex-direction: row;
+  position: fixed;
   width: 100%;
-  height: 90%;
-  border-radius: 25px;
-  background-color: seashell;
-  border: 2px solid seashell;
+  z-index: 10;
+  height: 10%;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: all 0.5s linear;
 }
+
+.obaque {
+  background-color: rgba(40, 40, 40, 1);
+}
+
+.in-between {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* ///////////////////////////// playlist //////////////////////////////////// */
 
 .playlist {
-  width: 50%;
-  height: 80%;
-  overflow-y: auto;
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+}
+
+.title {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  font-family: localRobotoFontBlack;
+  font-weight: 900;
+}
+
+/* ///////////////////////////// audio-tracks //////////////////////////////////// */
+
+.audio-tracks {
+  width: 58.7%;
   margin: auto;
   display: flex;
   flex-flow: column;
-}
-.title {
-  width: 75%;
-  padding-left: 20px;
-  text-align: left;
-  padding-bottom: 10px;
-  font-weight: 600;
-  margin: auto;
-  font-size: 0.9rem;
+  margin-top: 8vh;
+  margin-bottom: 10%;
+  z-index: 5;
+  animation: song 0.5s forwards;
 }
 
+.title-tracks-shift {
+  width: 58.7%;
+  margin-right: 29.6%;
+  margin-left: calc(4% + 20px);
+}
+.title-tracks-auto {
+  margin-left: 32.7%;
+}
+
+.fade-enter {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+.fade-exit {
+  opacity: 0.5;
+}
+.fade-exit-active {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+/* ///////////////////////////// now-playing //////////////////////////////////// */
+
 .now-playing {
-  width: 35%;
-  height: 80%;
-  margin: auto;
+  width: 41.3%;
+  margin-top: 8vh;
+  z-index: 5;
+  height: 50%;
+}
+
+.title-nowplaying {
+  margin-left: calc(17.4% + 20px);
+  width: 41.3%;
+}
+
+/* ///////////////////////////// scroll-bar //////////////////////////////////// */
+
+body::-webkit-scrollbar {
+  width: 16px;
+}
+body::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background-clip: padding-box;
+  min-height: 30px;
+  color: #f59b23;
+  background-color: hsla(0, 0%, 80%, 0.3);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), #121212 40%);
+  background-color: #f59b23;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ///////////////////////////// keyframes //////////////////////////////////// */
+
+@keyframes song {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: rotateX(-75%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* ///////////////////////////// media-queries //////////////////////////////////// */
+
+@media only screen and (max-width: 959px) {
+  .playlist {
+    flex-flow: column;
+    width: 100vw;
+  }
+  .audio-tracks {
+    width: 100vw;
+    padding-top: 70px;
+    padding-bottom: 90px;
+    margin: auto;
+  }
+  .now-playing {
+    width: 100vw;
+    height: 50vh;
+    margin: auto;
+  }
+  .title-tracks-shift {
+    opacity: 0;
+  }
+  .title-tracks-auto {
+    width: 100%;
+    align-self: baseline;
+    justify-content: flex-end;
+    white-space: nowrap;
+  }
+  .title-nowplaying {
+    justify-content: flex-end;
+    align-self: baseline;
+    width: 100%;
+    white-space: nowrap;
+  }
 }
