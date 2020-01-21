@@ -1,19 +1,55 @@
 .nowplaying-song {
-  padding-top: 40px;
-  width: 80%;
-  height: 60%;
+  padding-top: 60px;
+  width: 51%;
+  height: 60vh;
   border-radius: 15px;
-  margin: auto;
+  margin-left: 42%;
   z-index: 10;
   overflow-y: auto;
+  animation: now-playing 1.5s ease-in-out forwards;
 }
 
 .song-info {
-  font-size: small;
-  color: aliceblue;
-  font-weight: 300;
+  font-size: medium;
+  font-weight: 600;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 10px;
   text-align: left;
   text-justify: auto;
+  color: #fff;
+}
+
+/* ///////////////////////////// key-frames //////////////////////////////////// */
+
+@keyframes now-playing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ///////////////////////////// media-queries //////////////////////////////////// */
+
+@media only screen and (max-width: 959px) {
+  .nowplaying-song {
+    padding-top: 20px;
+    padding-bottom: 0;
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    height: 80%;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 601px) {
+  .song-info {
+    font-size: 0.6rem;
+  }
 }
