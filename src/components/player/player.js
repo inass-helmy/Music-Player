@@ -35,7 +35,7 @@ const Player = props => {
   };
 
   const displayDuration = timePrettier(duration);
-  const displaySeek = timePrettier(parseInt(seek));
+  const displaySeek = timePrettier(parseInt(isNaN(seek) ? 0 : seek));
 
   return (
     <div className="player-controls">
@@ -60,7 +60,7 @@ const Player = props => {
         <span className={next} aria-hidden="true"></span>
       </button>
       <div className="slider">
-        <span className="player-btn seek">{displaySeek}</span>
+        <span className="player-btn seek">{displaySeek || '00:00'}</span>
         <input
           className="progress-bar"
           type="range"
@@ -69,7 +69,7 @@ const Player = props => {
           value={seek}
           max={duration}
           onChange={e => {
-            moveBar(parseInt(e.target.value) || seek);
+            moveBar(parseInt(e.target.value));
           }}
         ></input>
         <span className="song-duration player-btn">{displayDuration}</span>
